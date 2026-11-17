@@ -1,0 +1,43 @@
+﻿name: Report a resource issue
+description: Report a broken link, outdated description, or concern about a listed resource.
+title: "[Resource report]: "
+labels:
+  - resource-maintenance
+body:
+  - type: input
+    id: resource
+    attributes:
+      label: Resource name
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Resource URL
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options:
+        - Broken link
+        - Project archived or unmaintained
+        - Incorrect description
+        - Incorrect category
+        - Security concern
+        - Duplicate entry
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Explain the issue and provide supporting links where possible.
+    validations:
+      required: true
